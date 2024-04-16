@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         EditText phone = (EditText)findViewById(R.id.editTextNumber);
-        email.addTextChangedListener(new TextWatcher(){
+        phone.addTextChangedListener(new TextWatcher(){
             @Override
             public void beforeTextChanged(CharSequence s, int start, int before, int count) {
 
@@ -63,16 +63,13 @@ public class MainActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
                 text = phone.getText().toString();
                 for (int i = 0; i < text.length(); i++){
-                    if (text.charAt(i) == ' '){
-                        phone.setTextColor(Color.BLACK);
-                        for (int j = 0; j < text.length(); j++){
-                            if (text.charAt(j) == ' '){
-                                phone.setTextColor(Color.GREEN);
+                            if (text.length() == 11){
+                                phone.setTextColor(Color.RED);
+                            }else {
+                                phone.setTextColor(Color.BLACK);
                             }
                         }
-                    }
                 }
-            }
 
         });
 
