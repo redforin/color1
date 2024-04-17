@@ -73,5 +73,35 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+        EditText pass = (EditText)findViewById(R.id.editTextTextPassword);
+        pass.addTextChangedListener(new TextWatcher(){
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                text = pass.getText().toString();
+                for (int i = 0; i < text.length(); i++){
+                    if (text.charAt(i) == '@'){
+                        pass.setTextColor(Color.BLACK);
+                        for (int j = 0; j < text.length(); j++){
+                            if (text.charAt(j) == '.'){
+                                pass.setTextColor(Color.GREEN);
+                            }
+                        }
+                    }
+                }
+            }
+
+        });
+
+
     }
 }
