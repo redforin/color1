@@ -101,9 +101,9 @@ public class MainActivity extends AppCompatActivity {
                                     pass.setTextColor(Color.RED);
                                 }
                             }
-                        }
                     }
                 }
+            }
         });
 
         EditText pass1 = (EditText)findViewById(R.id.editTextTextPassword2);
