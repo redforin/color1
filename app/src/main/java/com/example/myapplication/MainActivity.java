@@ -11,6 +11,7 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
 
     private String text = "";
+    private String text1 = "";
 
 
     @Override
@@ -87,15 +88,22 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                text = pass.getText().toString();
-                for (int i = 0; i < text.length(); i++){
-                    if (text.length() == 8){
+                text1 = pass.getText().toString();
+                for (int i = 0; i < text1.length(); i++) {
+                    if (text1.length() == 8) {
                         pass.setTextColor(Color.BLACK);
-                    }else {
+                    } else {
                         pass.setTextColor(Color.RED);
+                            for (int j = 0; j < text1.length(); j++) {
+                                if (text.charAt(j) == ) {
+                                    pass.setTextColor(Color.BLACK);
+                                } else {
+                                    pass.setTextColor(Color.RED);
+                                }
+                            }
+                        }
                     }
                 }
-            }
         });
 
         EditText pass1 = (EditText)findViewById(R.id.editTextTextPassword2);
@@ -114,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
                 text = pass1.getText().toString();
                 for (int i = 0; i < text.length(); i++){
-                    if(pass1.equals(pass)){
+                    if(text.equals(text1)){
                         pass1.setTextColor(Color.GREEN);
                     }else{
                         pass1.setTextColor(Color.RED);
