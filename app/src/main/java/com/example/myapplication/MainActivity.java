@@ -11,7 +11,7 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
 
     private String text = "";
-    private char[] textChar = new char[text.length()];
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
