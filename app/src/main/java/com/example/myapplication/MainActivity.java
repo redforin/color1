@@ -89,19 +89,38 @@ public class MainActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
                 text = pass.getText().toString();
                 for (int i = 0; i < text.length(); i++){
-                    if (text.charAt(i) == '@'){
+                    if (text.length() == 8){
                         pass.setTextColor(Color.BLACK);
-                        for (int j = 0; j < text.length(); j++){
-                            if (text.charAt(j) == '.'){
-                                pass.setTextColor(Color.GREEN);
-                            }
-                        }
+                    }else {
+                        pass.setTextColor(Color.RED);
                     }
                 }
             }
-
         });
 
+        EditText pass1 = (EditText)findViewById(R.id.editTextTextPassword2);
+        pass1.addTextChangedListener(new TextWatcher(){
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int before, int count) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                text = pass1.getText().toString();
+                for (int i = 0; i < text.length(); i++){
+                    if(pass1.equals(pass)){
+                        pass1.setTextColor(Color.GREEN);
+                    }else{
+                        pass1.setTextColor(Color.RED);
+                    }
+                }
+            }
+        });
     }
 }
